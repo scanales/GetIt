@@ -5,11 +5,11 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1498"/>
     </dependencies>
     <scenes>
-        <!--View Controller - Deals-->
+        <!--Main View Controller - Deals-->
         <scene sceneID="ois-5R-q8z">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eRr-71-Jp3" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <tableViewController id="08G-Vx-6vh" customClass="ViewController" sceneMemberID="viewController">
+                <tableViewController id="08G-Vx-6vh" customClass="MainViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="81J-ha-v9c">
                         <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -131,9 +131,6 @@
         </class>
         <class className="FilterViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/FilterViewController.h"/>
-        </class>
-        <class className="ViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewController.h"/>
         </class>
     </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

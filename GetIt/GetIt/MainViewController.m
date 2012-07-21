@@ -6,14 +6,14 @@
 //  Copyright (c) 2012 GetIt. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "MainViewController.h"
 #import "DealDetailViewController.h"
 
-@interface ViewController ()
+@interface MainViewController ()
 
 @end
 
-@implementation ViewController
+@implementation MainViewController
 
 - (void)viewDidLoad
 {
