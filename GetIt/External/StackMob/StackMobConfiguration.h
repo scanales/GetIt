@@ -20,12 +20,12 @@
 #define StackMobDebug(format, ...)
 #endif
 
-#define STACKMOB_OAUTH_VERSION      OAuth2
-#define STACKMOB_PUBLIC_KEY         @"YOUR_PUBLIC_KEY"
-#define STACKMOB_PRIVATE_KEY        @"YOUR_PRIVATE_KEY"
-#define STACKMOB_APP_NAME           @"YOUR_APP_NAME"
-#define STACKMOB_UDID_SALT          @"YOUR_SALT_HERE"
-#define STACKMOB_APP_DOMAIN         @"stackmob.com"
-#define STACKMOB_APP_MOB            @"mob1"
-#define STACKMOB_USER_OBJECT_NAME   @"user"
-#define STACKMOB_API_VERSION        0
+#define STACKMOB_OAUTH_VERSION OAuth2
+#define STACKMOB_PUBLIC_KEY @"0e017292-8e12-45cd-97c7-d100914ba322"
+#define STACKMOB_PRIVATE_KEY @"9dbcb4b1-1e1f-42dd-a83e-b68d559521a4"
+#define STACKMOB_APP_NAME @"YOUR_APP_NAME"
+#define STACKMOB_UDID_SALT @"828e4a5771d696176b1c6a3e0579858a"
+#define STACKMOB_APP_DOMAIN @"stackmob.com"
+#define STACKMOB_APP_MOB @"getit"
+#define STACKMOB_USER_OBJECT_NAME @"nest"
+#define STACKMOB_API_VERSION 0
