@@ -97,6 +97,36 @@ NSMutableArray *items;
     
 }
 
+- (void)sortItems:(NSMutableArray *)items{
+    NSLog(@"Sorting");
+    NSLog(@"%@", items);
+    int RADIUS = 6371; //earth's radius
+    for (NSMutableDictionary *d in items) {
+        NSDictionary *merch = [d objectForKey: @"merchant"];
+        float lat = [[merch objectForKey:@"latitude"] floatValue];
+        float lon = [[merch objectForKey:@"longitude"] floatValue];
+        
+        float latDiff = ((lat - userLocation.coordinate.latitude) * M_PI) / 180;
+        float lonDiff = ((lon - userLocation.coordinate.longitude) * M_PI) / 180;
+        
+        float a = sinf(latDiff/2) * sinf(latDiff/2) + sinf(lonDiff/2) * sinf(lonDiff/2) * cosf(lat) * cos(userLocation.coordinate.latitude);
+        
+        float c = 2 * atan2f(sqrtf(a), sqrtf(1-a));
+        
+        float distance = RADIUS * c;
+
+        
+        NSLog(@"DISTANCE:\n%f", distance);
+        [d setObject: [NSNumber numberWithFloat: distance] forKey:@"distance"];
+    }
+    NSSortDescriptor *descriptor = [[NSSortDescriptor alloc] initWithKey:@"distance"  ascending:YES];
+
+    [items sortUsingDescriptors:[NSArray arrayWithObjects:descriptor, nil]];
+    
+    NSLog(@"%@", items);
+    
+    
+}
 
 
 #pragma mark - CLLocationManagerDelegate
@@ -123,6 +153,7 @@ NSMutableArray *items;
         JSONDecoder *decoder = [[JSONDecoder alloc] init];
         id JSON = [decoder mutableObjectWithData:responseObject];
         items = [JSON objectForKey:@"items"];
+        [self sortItems:items];
 //        NSLog(@"DEALS %@",[[[[JSON objectForKey:@"items"] lastObject] objectForKey:@"merchant"] class]);
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"ERROR : %@ \n",error.localizedDescription);
