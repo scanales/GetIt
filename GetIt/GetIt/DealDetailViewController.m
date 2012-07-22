@@ -8,6 +8,7 @@
 
 #import "DealDetailViewController.h"
 #import "AFNetworking.h"
+#import "MapViewController.h"
 
 @interface DealDetailViewController ()
 
@@ -60,6 +61,13 @@
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
+}
+
+-(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([[segue identifier] isEqualToString: @"mapView"]) {
+        MapViewController *dest = [segue destinationViewController];        
+        dest.item = self.item;
+    }
 }
 
 #pragma mark - Actions
