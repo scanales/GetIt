@@ -82,6 +82,7 @@ NSMutableArray *categories;
     UILabel *textLabel = (UILabel *)[cell viewWithTag:2];
     UIImageView *imageView = (UIImageView *)[cell viewWithTag:1];
     UILabel *distanceLbl = (UILabel *)[cell viewWithTag:3];
+    UILabel *cityLbl = (UILabel *)[cell viewWithTag:4];
     
     
     textLabel.font = [UIFont fontWithName:@"Futura-Medium" size:14.];
@@ -89,15 +90,17 @@ NSMutableArray *categories;
     
     NSNumberFormatter *numberFormatter = [[NSNumberFormatter alloc] init];
     [numberFormatter setMaximumFractionDigits:2];
-    distanceLbl.text = [numberFormatter stringFromNumber:[item objectForKey:@"distance"] ];
+    distanceLbl.text = [[numberFormatter stringFromNumber:[item objectForKey:@"distance"] ] stringByAppendingString: @" miles away"];
     [imageView setImageWithURL:[NSURL URLWithString:[deal objectForKey:@"image_thumb_retina"]]];
+    
+    cityLbl.text = [[item objectForKey: @"merchant"] objectForKey:@"city"];
     
     return cell;
 }
 
 - (void)sortItems:(NSMutableArray *)items{
-    NSLog(@"Sorting");
-    NSLog(@"%@", items);
+    NSLog(@"Lat %f", userLocation.coordinate.latitude);
+    NSLog(@"Lon %f", userLocation.coordinate.longitude);
     int RADIUS = 6371; //earth's radius
     for (NSMutableDictionary *d in items) {
         NSDictionary *merch = [d objectForKey: @"merchant"];
