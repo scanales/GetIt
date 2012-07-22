@@ -8,7 +8,8 @@
 
 #import "MainViewController.h"
 #import "DealDetailViewController.h"
-#import "AFJSONRequestOperation.h"
+#import "AFNetworking.h"
+#import "JSONKit.h"
 
 @interface MainViewController ()
 
@@ -20,7 +21,7 @@ CLLocationManager *locationManager;
 CLLocation *userLocation;
 
 
-
+NSMutableArray *items;
 
 - (void)viewDidLoad
 {
@@ -114,13 +115,19 @@ CLLocation *userLocation;
     
     NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://lesserthan.com/api.getDealsLatLon/json/?lat=%f&lon=%f",userLocation.coordinate.latitude,userLocation.coordinate.longitude]]];
     
-    AFJSONRequestOperation *reqOp = [AFJSONRequestOperation JSONRequestOperationWithRequest:request success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
-        
-        NSLog(@"DEALS %@",JSON);
-                
-    } failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {
-        NSLog(@"ERROR : %@ \n %@",error.localizedDescription, JSON);
+    AFHTTPRequestOperation *reqOp = [[AFHTTPRequestOperation alloc] initWithRequest:request];
+    
+    [reqOp setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
+            
+        NSLog(@"class %@",[responseObject class]);
+        JSONDecoder *decoder = [[JSONDecoder alloc] init];
+        id JSON = [decoder mutableObjectWithData:responseObject];
+        items = [JSON objectForKey:@"items"];
+//        NSLog(@"DEALS %@",[[[[JSON objectForKey:@"items"] lastObject] objectForKey:@"merchant"] class]);
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"ERROR : %@ \n",error.localizedDescription);
     }];
+    
     
     [reqOp start];
     
