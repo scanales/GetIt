@@ -110,7 +110,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Bqf-HY-hbP">
-                                <rect key="frame" x="218" y="359" width="72" height="37"/>
+                                <rect key="frame" x="230" y="369" width="72" height="37"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Get It">
@@ -132,8 +132,15 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="h9T-3m-Y0z">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="100%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="h9T-3m-Y0z">
                                 <rect key="frame" x="178" y="10" width="122" height="150"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="38"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="10" id="i0c-cV-GDv">
+                                <rect key="frame" x="20" y="194" width="287" height="167"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -144,6 +151,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="6AU-D5-Nbj"/>
                     <connections>
+                        <outlet property="descriptionLbl" destination="i0c-cV-GDv" id="FNo-Ga-pA0"/>
                         <outlet property="discount" destination="h9T-3m-Y0z" id="J4a-TZ-MAX"/>
                         <outlet property="illustration" destination="r8u-3t-0U9" id="VdJ-dk-Pd9"/>
                         <outlet property="titleLbl" destination="NnQ-w5-UVd" id="8pz-XP-Blo"/>

@@ -37,6 +37,7 @@
     
     titleLbl.text = [deal objectForKey:@"title"];
     discount.text = [deal objectForKey:@"discount"];
+    descriptionLbl.text = [deal objectForKey:@"description"];
     
 }
 
@@ -45,6 +46,7 @@
     discount = nil;
     illustration = nil;
     titleLbl = nil;
+    descriptionLbl = nil;
     [super viewDidUnload];
     // Release any retained subviews of the main view.
 }
