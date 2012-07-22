@@ -8,6 +8,7 @@
 
 #import "DealDetailViewController.h"
 #import "AFNetworking.h"
+#import "MapViewController.h"
 
 @interface DealDetailViewController ()
 
@@ -40,8 +41,8 @@
     discount.text = [deal objectForKey:@"discount"];
     addressLbl.text= [[item objectForKey:@"merchant"] objectForKey:@"address"];
     
-
-    descriptionLbl.text = [deal objectForKey:@"description"];
+    
+    descriptionTextView.text = [deal objectForKey:@"description"];
 
     
 }
@@ -51,8 +52,8 @@
     discount = nil;
     illustration = nil;
     titleLbl = nil;
-    descriptionLbl = nil;
     addressLbl = nil;
+    descriptionTextView = nil;
     [super viewDidUnload];
     // Release any retained subviews of the main view.
 }
@@ -62,12 +63,31 @@
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
+-(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([[segue identifier] isEqualToString: @"mapView"]) {
+        MapViewController *dest = [segue destinationViewController];        
+        dest.item = self.item;
+    }
+}
+
+#pragma mark - Actions
+
 - (IBAction)scanCard:(id)sender {
     CardIOPaymentViewController *scanViewController = [[CardIOPaymentViewController alloc] initWithPaymentDelegate:self];
     scanViewController.appToken = @"9b39146fbf8a4ff4aa9b65cb72dbd1f7"; // get your app token from the card.io website
     [self presentModalViewController:scanViewController animated:YES];
 }
 
+- (IBAction)holdItAction:(id)sender {
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"" message:@"We will hold it for 30 minutes under this name." delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Ok",nil ];
+    
+    [alert setAlertViewStyle:UIAlertViewStylePlainTextInput];
+    
+    [alert show];
+}
+
+
+#pragma mark - CardIOPaymentViewControllerDelegate
 
 - (void)userDidCancelPaymentViewController:(CardIOPaymentViewController *)scanViewController {
     NSLog(@"User canceled payment info");
@@ -80,6 +100,12 @@
     NSLog(@"Received card info. Number: %@, expiry: %02i/%i, cvv: %@.", info.redactedCardNumber, info.expiryMonth, info.expiryYear, info.cvv);
     // Use the card info...
     [scanViewController dismissModalViewControllerAnimated:YES];
+}
+
+#pragma mark - UIAlertViewDelegate
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+    
 }
 
 

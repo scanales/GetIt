@@ -11,6 +11,7 @@
 #import "FilterViewController.h"
 #import "AFNetworking.h"
 #import "JSONKit.h"
+#import "MBProgressHUD.h"
 
 @interface MainViewController ()
 
@@ -27,11 +28,21 @@ CLLocation *userLocation;
 NSMutableArray *items;
 NSMutableArray *categories;
 NSMutableArray *filteredItems;
+NSString *currentCategory;
+
+UIImageView *splash;
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    
+    splash = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Default.png"]];
+    splash.frame = CGRectMake(0, 0, 320, 480);
+    
+    [self.view addSubview:splash];
+    [MBProgressHUD showHUDAddedTo:splash animated:YES];
+    
     
     if (nil == locationManager) {
         locationManager = [[CLLocationManager alloc] init];
@@ -63,14 +74,22 @@ NSMutableArray *filteredItems;
 
 -(void)filterCategoryWith:(NSString *)category {
 
-    filteredItems = [[NSMutableArray alloc] init];
-    for (NSDictionary *item in items) {
-        if ([[[item objectForKey:@"deal"] objectForKey:@"category"] isEqualToString:category]) {
-            [filteredItems addObject:item];
+    
+    if([category isEqualToString:@"All"]) {
+        filteredItems = nil;
+        currentCategory = nil;
+    } else {
+        filteredItems = [[NSMutableArray alloc] init];
+        currentCategory = category;
+
+        for (NSDictionary *item in items) {
+            if ([[[item objectForKey:@"deal"] objectForKey:@"category"] isEqualToString:category]) {
+                [filteredItems addObject:item];
+            }
         }
     }
-    
     [self.tableView reloadData];
+    [self.tableView selectRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] animated:YES scrollPosition:UITableViewScrollPositionTop];
     
 }
 
@@ -90,6 +109,15 @@ NSMutableArray *filteredItems;
         return [filteredItems count];
     } else {
         return [items count];
+    }
+    
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+    if (filteredItems && currentCategory) {
+        return currentCategory;
+    } else {
+        return @"";
     }
     
 }
@@ -171,7 +199,12 @@ NSMutableArray *filteredItems;
         NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
         
         DealDetailViewController *dest = [segue destinationViewController];
-        dest.item = [items objectAtIndex:indexPath.row];
+        
+        if (filteredItems) {
+            dest.item = [filteredItems objectAtIndex:indexPath.row];
+        } else {
+            dest.item = [items objectAtIndex:indexPath.row];
+        }
        
     } else if ([[segue identifier] isEqualToString:@"dealFilter"]) {
         FilterViewController *dest = [segue destinationViewController];
@@ -207,7 +240,10 @@ NSMutableArray *filteredItems;
         
         [self.tableView reloadData];
 
-//        NSLog(@"DEALS %@",[[[[JSON objectForKey:@"items"] lastObject] objectForKey:@"merchant"] class]);
+        [MBProgressHUD hideAllHUDsForView:splash animated:YES];
+        [splash removeFromSuperview];
+        
+
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"ERROR : %@ \n",error.localizedDescription);
     }];

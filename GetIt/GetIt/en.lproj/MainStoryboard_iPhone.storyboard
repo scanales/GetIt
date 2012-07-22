@@ -8,7 +8,6 @@
         <!--Main View Controller - Deals-->
         <scene sceneID="ois-5R-q8z">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="eRr-71-Jp3" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tableViewController id="08G-Vx-6vh" customClass="MainViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="92" sectionHeaderHeight="22" sectionFooterHeight="22" id="81J-ha-v9c">
                         <rect key="frame" x="0.0" y="64" width="320" height="416"/>
@@ -57,16 +56,6 @@
                         </prototypes>
                     </tableView>
                     <navigationItem key="navigationItem" title="Deals" id="0kD-S4-1Tw">
-                        <barButtonItem key="leftBarButtonItem" style="plain" id="nk6-C7-IRe">
-                            <segmentedControl key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="fwA-K0-WM1">
-                                <rect key="frame" x="5" y="7" width="71" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <segments>
-                                    <segment title=""/>
-                                    <segment title=""/>
-                                </segments>
-                            </segmentedControl>
-                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Search" id="mLv-uN-iyL">
                             <connections>
                                 <segue destination="tKi-hN-cRD" kind="push" identifier="dealFilter" id="tzM-kz-Tez"/>
@@ -74,25 +63,34 @@
                         </barButtonItem>
                     </navigationItem>
                 </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eRr-71-Jp3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-621" y="-175"/>
         </scene>
         <!--Filter View Controller-->
         <scene sceneID="m8F-L3-sqD">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="fy5-CT-KtI" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tableViewController id="tKi-hN-cRD" customClass="FilterViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="J4t-5E-3kn">
                         <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="45g-nY-sOV">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="filterCell" textLabel="ecF-XB-6MS" style="IBUITableViewCellStyleDefault" id="45g-nY-sOV">
                                 <rect key="frame" x="0.0" y="22" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ecF-XB-6MS">
+                                            <rect key="frame" x="10" y="0.0" width="300" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </label>
+                                    </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
                             </tableViewCell>
@@ -104,23 +102,23 @@
                     </tableView>
                     <navigationItem key="navigationItem" id="v9j-KG-0bC"/>
                 </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fy5-CT-KtI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-621" y="558"/>
         </scene>
         <!--Deal Detail View Controller-->
         <scene sceneID="Lw1-B0-vy1">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="rkq-gL-ib5" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="dealDetail" id="vHa-c8-OxB" customClass="DealDetailViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gvw-2m-uEM">
                         <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Bqf-HY-hbP">
-                                <rect key="frame" x="230" y="369" width="72" height="37"/>
+                                <rect key="frame" x="83" y="369" width="72" height="37"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Get It">
+                                <state key="normal" title="Get It!">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -131,7 +129,7 @@
                                     <action selector="scanCard:" destination="vHa-c8-OxB" eventType="touchUpInside" id="UVZ-kG-rGO"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="r8u-3t-0U9">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" id="r8u-3t-0U9">
                                 <rect key="frame" x="20" y="10" width="150" height="150"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -142,65 +140,125 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="100%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="h9T-3m-Y0z">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="100%" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="h9T-3m-Y0z">
                                 <rect key="frame" x="178" y="10" width="122" height="150"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="38"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="10" id="i0c-cV-GDv">
-                                <rect key="frame" x="20" y="241" width="257" height="89"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.70734627016129037" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="NC3-mk-4XI">
                                 <rect key="frame" x="20" y="182" width="224" height="51"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="14"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="ark-Vo-tsL">
+                                <rect key="frame" x="165" y="369" width="72" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Hold It!">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="holdItAction:" destination="vHa-c8-OxB" eventType="touchUpInside" id="EwY-bD-nSY"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" id="sdD-Jy-i0a">
+                                <rect key="frame" x="12" y="232" width="288" height="120"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Esa-Yk-nFM">
+                                <rect key="frame" x="272" y="1" width="44" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" image="07-map-marker.png">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="G4l-nq-bwW" kind="push" identifier="mapView" id="lDP-v5-rv6"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="6AU-D5-Nbj"/>
                     <connections>
                         <outlet property="addressLbl" destination="NC3-mk-4XI" id="fmz-Aa-Na6"/>
-                        <outlet property="descriptionLbl" destination="i0c-cV-GDv" id="FNo-Ga-pA0"/>
+                        <outlet property="descriptionTextView" destination="sdD-Jy-i0a" id="kj4-hO-bAf"/>
                         <outlet property="discount" destination="h9T-3m-Y0z" id="J4a-TZ-MAX"/>
                         <outlet property="illustration" destination="r8u-3t-0U9" id="VdJ-dk-Pd9"/>
                         <outlet property="titleLbl" destination="NnQ-w5-UVd" id="8pz-XP-Blo"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rkq-gL-ib5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="104" y="-151"/>
+        </scene>
+        <!--Map View Controller-->
+        <scene sceneID="Cro-dP-0H8">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cYc-Pi-3Xj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="G4l-nq-bwW" customClass="MapViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="YjA-NA-9bA">
+                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" id="onH-mq-mpw">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="416"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="4iQ-zx-gPY"/>
+                    <connections>
+                        <outlet property="mapView" destination="onH-mq-mpw" id="lmM-A5-pbl"/>
+                    </connections>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="87" y="484"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="pZC-u7-sPg">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="xXl-aA-xbs" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController definesPresentationContext="YES" id="7Cz-lU-E6a" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="jfj-J4-XPl">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="blackOpaque" id="jfj-J4-XPl">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
                         <segue destination="08G-Vx-6vh" kind="relationship" relationship="rootViewController" id="jlC-AK-Uyy"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xXl-aA-xbs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1195" y="-175"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="07-map-marker.png" width="16" height="26"/>
+    </resources>
     <classes>
         <class className="DealDetailViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/DealDetailViewController.h"/>
             <relationships>
+                <relationship kind="action" name="holdItAction:"/>
                 <relationship kind="action" name="scanCard:"/>
                 <relationship kind="outlet" name="addressLbl" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="descriptionLbl" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="descriptionTextView" candidateClass="UITextView"/>
                 <relationship kind="outlet" name="discount" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="illustration" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="titleLbl" candidateClass="UILabel"/>
@@ -211,6 +269,12 @@
         </class>
         <class className="MainViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/MainViewController.h"/>
+        </class>
+        <class className="MapViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MapViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="mapView" candidateClass="MKMapView"/>
+            </relationships>
         </class>
     </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

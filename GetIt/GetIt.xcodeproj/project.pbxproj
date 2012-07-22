@@ -63,6 +63,12 @@
 		4D9055F315BBC19500778589 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D9055F215BBC19500778589 /* MobileCoreServices.framework */; };
 		4D9055F515BBC19C00778589 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D9055F415BBC19C00778589 /* QuartzCore.framework */; };
 		4D9055F715BBC1A400778589 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D9055F615BBC1A400778589 /* Security.framework */; };
+		4DCD9C2E15BC629A00B05C8A /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DCD9C2D15BC629A00B05C8A /* MBProgressHUD.m */; };
+		4DE98DD915BC75B9008ED442 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DE98DD815BC75B9008ED442 /* MapKit.framework */; };
+		4DE98DDD15BC7662008ED442 /* 07-map-marker.png in Resources */ = {isa = PBXBuildFile; fileRef = 4DE98DDB15BC7662008ED442 /* 07-map-marker.png */; };
+		4DE98DDE15BC7662008ED442 /* 07-map-marker@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4DE98DDC15BC7662008ED442 /* 07-map-marker@2x.png */; };
+		4DE98DE115BC777A008ED442 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DE98DE015BC777A008ED442 /* MapViewController.m */; };
+		4DE98DE815BC7860008ED442 /* DealPlaceMark.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DE98DE715BC7860008ED442 /* DealPlaceMark.m */; };
 		4DEB306B15BB57DF006DDE62 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DEB306A15BB57DF006DDE62 /* UIKit.framework */; };
 		4DEB306D15BB57DF006DDE62 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DEB306C15BB57DF006DDE62 /* Foundation.framework */; };
 		4DEB306F15BB57DF006DDE62 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DEB306E15BB57DF006DDE62 /* CoreGraphics.framework */; };
@@ -74,6 +80,8 @@
 		4DEB308415BB57DF006DDE62 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DEB308315BB57DF006DDE62 /* MainViewController.m */; };
 		4DEB309215BB5DEA006DDE62 /* DealDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DEB309115BB5DEA006DDE62 /* DealDetailViewController.m */; };
 		4DEB309515BB60E7006DDE62 /* FilterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DEB309415BB60E7006DDE62 /* FilterViewController.m */; };
+		6164D5DD15BBC98E00970109 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 6164D5DC15BBC98E00970109 /* icon.png */; };
+		6164D5DF15BBCBB400970109 /* ICON2.png in Resources */ = {isa = PBXBuildFile; fileRef = 6164D5DE15BBCBB400970109 /* ICON2.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -184,6 +192,15 @@
 		4D9055F215BBC19500778589 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		4D9055F415BBC19C00778589 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		4D9055F615BBC1A400778589 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		4DCD9C2C15BC629A00B05C8A /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
+		4DCD9C2D15BC629A00B05C8A /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
+		4DE98DD815BC75B9008ED442 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		4DE98DDB15BC7662008ED442 /* 07-map-marker.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "07-map-marker.png"; sourceTree = "<group>"; };
+		4DE98DDC15BC7662008ED442 /* 07-map-marker@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "07-map-marker@2x.png"; sourceTree = "<group>"; };
+		4DE98DDF15BC777A008ED442 /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
+		4DE98DE015BC777A008ED442 /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
+		4DE98DE615BC7860008ED442 /* DealPlaceMark.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DealPlaceMark.h; sourceTree = "<group>"; };
+		4DE98DE715BC7860008ED442 /* DealPlaceMark.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DealPlaceMark.m; sourceTree = "<group>"; };
 		4DEB306615BB57DF006DDE62 /* GetIt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GetIt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4DEB306A15BB57DF006DDE62 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		4DEB306C15BB57DF006DDE62 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -202,6 +219,8 @@
 		4DEB309115BB5DEA006DDE62 /* DealDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DealDetailViewController.m; sourceTree = "<group>"; };
 		4DEB309315BB60E7006DDE62 /* FilterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FilterViewController.h; sourceTree = "<group>"; };
 		4DEB309415BB60E7006DDE62 /* FilterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FilterViewController.m; sourceTree = "<group>"; };
+		6164D5DC15BBC98E00970109 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon.png; path = ../../../Dropbox/iOSDev12/GetIt/Graphics/icon.png; sourceTree = "<group>"; };
+		6164D5DE15BBCBB400970109 /* ICON2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ICON2.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -209,6 +228,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4DE98DD915BC75B9008ED442 /* MapKit.framework in Frameworks */,
 				4D90553615BB6D4400778589 /* SystemConfiguration.framework in Frameworks */,
 				4D9055F715BBC1A400778589 /* Security.framework in Frameworks */,
 				4D9055F515BBC19C00778589 /* QuartzCore.framework in Frameworks */,
@@ -457,6 +477,10 @@
 		4DEB305B15BB57DF006DDE62 = {
 			isa = PBXGroup;
 			children = (
+				4DE98DDB15BC7662008ED442 /* 07-map-marker.png */,
+				4DE98DDC15BC7662008ED442 /* 07-map-marker@2x.png */,
+				6164D5DE15BBCBB400970109 /* ICON2.png */,
+				6164D5DC15BBC98E00970109 /* icon.png */,
 				4D9055E015BBBA7000778589 /* Default.png */,
 				4D9054B615BB6C3D00778589 /* External */,
 				4DEB307015BB57DF006DDE62 /* GetIt */,
@@ -476,6 +500,7 @@
 		4DEB306915BB57DF006DDE62 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4DE98DD815BC75B9008ED442 /* MapKit.framework */,
 				4D9055F615BBC1A400778589 /* Security.framework */,
 				4D9055F415BBC19C00778589 /* QuartzCore.framework */,
 				4D9055F215BBC19500778589 /* MobileCoreServices.framework */,
@@ -496,6 +521,8 @@
 		4DEB307015BB57DF006DDE62 /* GetIt */ = {
 			isa = PBXGroup;
 			children = (
+				4DCD9C2C15BC629A00B05C8A /* MBProgressHUD.h */,
+				4DCD9C2D15BC629A00B05C8A /* MBProgressHUD.m */,
 				4DEB307915BB57DF006DDE62 /* AppDelegate.h */,
 				4DEB307A15BB57DF006DDE62 /* AppDelegate.m */,
 				4DEB307C15BB57DF006DDE62 /* MainStoryboard_iPhone.storyboard */,
@@ -506,6 +533,10 @@
 				4DEB309115BB5DEA006DDE62 /* DealDetailViewController.m */,
 				4DEB309315BB60E7006DDE62 /* FilterViewController.h */,
 				4DEB309415BB60E7006DDE62 /* FilterViewController.m */,
+				4DE98DDF15BC777A008ED442 /* MapViewController.h */,
+				4DE98DE015BC777A008ED442 /* MapViewController.m */,
+				4DE98DE615BC7860008ED442 /* DealPlaceMark.h */,
+				4DE98DE715BC7860008ED442 /* DealPlaceMark.m */,
 				4DEB307115BB57DF006DDE62 /* Supporting Files */,
 			);
 			path = GetIt;
@@ -578,6 +609,10 @@
 				4DEB308115BB57DF006DDE62 /* MainStoryboard_iPad.storyboard in Resources */,
 				4D9055BC15BB8F1500778589 /* deal_default.png in Resources */,
 				4D9055E115BBBA7000778589 /* Default.png in Resources */,
+				6164D5DD15BBC98E00970109 /* icon.png in Resources */,
+				6164D5DF15BBCBB400970109 /* ICON2.png in Resources */,
+				4DE98DDD15BC7662008ED442 /* 07-map-marker.png in Resources */,
+				4DE98DDE15BC7662008ED442 /* 07-map-marker@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -634,6 +669,9 @@
 				4D9055A815BB6EDE00778589 /* StackMobSession.m in Sources */,
 				4D9055A915BB6EDE00778589 /* NSData+Base64.m in Sources */,
 				4D9055AA15BB6EDE00778589 /* NSData+JSON.m in Sources */,
+				4DCD9C2E15BC629A00B05C8A /* MBProgressHUD.m in Sources */,
+				4DE98DE115BC777A008ED442 /* MapViewController.m in Sources */,
+				4DE98DE815BC7860008ED442 /* DealPlaceMark.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
