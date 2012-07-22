@@ -53,6 +53,7 @@
 		4D9055A815BB6EDE00778589 /* StackMobSession.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D90558315BB6EDE00778589 /* StackMobSession.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		4D9055A915BB6EDE00778589 /* NSData+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D90558715BB6EDE00778589 /* NSData+Base64.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		4D9055AA15BB6EDE00778589 /* NSData+JSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D90558915BB6EDE00778589 /* NSData+JSON.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		4D9055B015BB743C00778589 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D9055AF15BB743C00778589 /* CoreLocation.framework */; };
 		4DEB306B15BB57DF006DDE62 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DEB306A15BB57DF006DDE62 /* UIKit.framework */; };
 		4DEB306D15BB57DF006DDE62 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DEB306C15BB57DF006DDE62 /* Foundation.framework */; };
 		4DEB306F15BB57DF006DDE62 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DEB306E15BB57DF006DDE62 /* CoreGraphics.framework */; };
@@ -161,6 +162,7 @@
 		4D90558715BB6EDE00778589 /* NSData+Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+Base64.m"; sourceTree = "<group>"; };
 		4D90558815BB6EDE00778589 /* NSData+JSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+JSON.h"; sourceTree = "<group>"; };
 		4D90558915BB6EDE00778589 /* NSData+JSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+JSON.m"; sourceTree = "<group>"; };
+		4D9055AF15BB743C00778589 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		4DEB306615BB57DF006DDE62 /* GetIt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GetIt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4DEB306A15BB57DF006DDE62 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		4DEB306C15BB57DF006DDE62 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -186,6 +188,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4D9055B015BB743C00778589 /* CoreLocation.framework in Frameworks */,
 				4D90553815BB6D4900778589 /* CFNetwork.framework in Frameworks */,
 				4D90553615BB6D4400778589 /* SystemConfiguration.framework in Frameworks */,
 				4DEB306B15BB57DF006DDE62 /* UIKit.framework in Frameworks */,
@@ -431,6 +434,7 @@
 		4DEB306915BB57DF006DDE62 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4D9055AF15BB743C00778589 /* CoreLocation.framework */,
 				4D90553515BB6D4400778589 /* SystemConfiguration.framework */,
 				4D90553715BB6D4900778589 /* CFNetwork.framework */,
 				4DEB306A15BB57DF006DDE62 /* UIKit.framework */,

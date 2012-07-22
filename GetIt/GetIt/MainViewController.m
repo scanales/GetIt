@@ -8,6 +8,7 @@
 
 #import "MainViewController.h"
 #import "DealDetailViewController.h"
+#import "AFJSONRequestOperation.h"
 
 @interface MainViewController ()
 
@@ -15,16 +16,32 @@
 
 @implementation MainViewController
 
+CLLocationManager *locationManager;
+CLLocation *userLocation;
+
+
+
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    
+    if (nil == locationManager) {
+        locationManager = [[CLLocationManager alloc] init];
+        
+        locationManager.delegate = self;
+        locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters;
+        //locationManager.distanceFilter = 500;
+        [locationManager startUpdatingLocation];
+    }
 }
 
 - (void)viewDidUnload
 {
     [super viewDidUnload];
     // Release any retained subviews of the main view.
+    
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
@@ -78,5 +95,36 @@
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
 }
+
+
+
+#pragma mark - CLLocationManagerDelegate
+
+- (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation {
+    
+
+    
+    NSLog(@" lat :%f  long: %f",newLocation.coordinate.latitude,newLocation.coordinate.longitude);
+    userLocation = newLocation;
+
+    [locationManager stopUpdatingLocation];
+
+    //http://lesserthan.com/api.getDealsLatLon/json/?lat=40.4427&lon=-80.0120
+    
+    
+    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://lesserthan.com/api.getDealsLatLon/json/?lat=%f&lon=%f",userLocation.coordinate.latitude,userLocation.coordinate.longitude]]];
+    
+    AFJSONRequestOperation *reqOp = [AFJSONRequestOperation JSONRequestOperationWithRequest:request success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
+        
+        NSLog(@"DEALS %@",JSON);
+                
+    } failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {
+        NSLog(@"ERROR : %@ \n %@",error.localizedDescription, JSON);
+    }];
+    
+    [reqOp start];
+    
+}
+
 
 @end

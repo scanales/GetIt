@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MainViewController : UITableViewController
+#import <CoreLocation/CoreLocation.h>
+
+@interface MainViewController : UITableViewController <CLLocationManagerDelegate>
 
 @end
