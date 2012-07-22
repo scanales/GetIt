@@ -28,6 +28,7 @@ CLLocation *userLocation;
 NSMutableArray *items;
 NSMutableArray *categories;
 NSMutableArray *filteredItems;
+NSString *currentCategory;
 
 UIImageView *splash;
 
@@ -73,13 +74,20 @@ UIImageView *splash;
 
 -(void)filterCategoryWith:(NSString *)category {
 
-    filteredItems = [[NSMutableArray alloc] init];
-    for (NSDictionary *item in items) {
-        if ([[[item objectForKey:@"deal"] objectForKey:@"category"] isEqualToString:category]) {
-            [filteredItems addObject:item];
+    
+    if([category isEqualToString:@"All"]) {
+        filteredItems = nil;
+        currentCategory = nil;
+    } else {
+        filteredItems = [[NSMutableArray alloc] init];
+        currentCategory = category;
+
+        for (NSDictionary *item in items) {
+            if ([[[item objectForKey:@"deal"] objectForKey:@"category"] isEqualToString:category]) {
+                [filteredItems addObject:item];
+            }
         }
     }
-    
     [self.tableView reloadData];
     
 }
@@ -100,6 +108,15 @@ UIImageView *splash;
         return [filteredItems count];
     } else {
         return [items count];
+    }
+    
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+    if (filteredItems && currentCategory) {
+        return currentCategory;
+    } else {
+        return @"";
     }
     
 }
@@ -185,7 +202,12 @@ UIImageView *splash;
         NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
         
         DealDetailViewController *dest = [segue destinationViewController];
-        dest.item = [items objectAtIndex:indexPath.row];
+        
+        if (filteredItems) {
+            dest.item = [filteredItems objectAtIndex:indexPath.row];
+        } else {
+            dest.item = [items objectAtIndex:indexPath.row];
+        }
        
     } else if ([[segue identifier] isEqualToString:@"dealFilter"]) {
         FilterViewController *dest = [segue destinationViewController];
