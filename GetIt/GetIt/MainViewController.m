@@ -138,14 +138,10 @@ NSMutableArray *filteredItems;
         NSDictionary *merch = [d objectForKey: @"merchant"];
         float lat = [[merch objectForKey:@"latitude"] floatValue];
         float lon = [[merch objectForKey:@"longitude"] floatValue];
-        
         float latDiff = ((lat - userLocation.coordinate.latitude) * M_PI) / 180;
         float lonDiff = ((lon - userLocation.coordinate.longitude) * M_PI) / 180;
-        
         float a = sinf(latDiff/2) * sinf(latDiff/2) + sinf(lonDiff/2) * sinf(lonDiff/2) * cosf(lat) * cos(userLocation.coordinate.latitude);
-        
         float c = 2 * atan2f(sqrtf(a), sqrtf(1-a));
-        
         float distance = RADIUS * c;
         
         [d setObject: [NSNumber numberWithFloat: distance] forKey:@"distance"];
