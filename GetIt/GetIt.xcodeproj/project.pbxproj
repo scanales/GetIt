@@ -63,6 +63,7 @@
 		4D9055F315BBC19500778589 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D9055F215BBC19500778589 /* MobileCoreServices.framework */; };
 		4D9055F515BBC19C00778589 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D9055F415BBC19C00778589 /* QuartzCore.framework */; };
 		4D9055F715BBC1A400778589 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D9055F615BBC1A400778589 /* Security.framework */; };
+		4DCD9C2E15BC629A00B05C8A /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DCD9C2D15BC629A00B05C8A /* MBProgressHUD.m */; };
 		4DEB306B15BB57DF006DDE62 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DEB306A15BB57DF006DDE62 /* UIKit.framework */; };
 		4DEB306D15BB57DF006DDE62 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DEB306C15BB57DF006DDE62 /* Foundation.framework */; };
 		4DEB306F15BB57DF006DDE62 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DEB306E15BB57DF006DDE62 /* CoreGraphics.framework */; };
@@ -186,6 +187,8 @@
 		4D9055F215BBC19500778589 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		4D9055F415BBC19C00778589 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		4D9055F615BBC1A400778589 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		4DCD9C2C15BC629A00B05C8A /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
+		4DCD9C2D15BC629A00B05C8A /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 		4DEB306615BB57DF006DDE62 /* GetIt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GetIt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4DEB306A15BB57DF006DDE62 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		4DEB306C15BB57DF006DDE62 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -502,6 +505,8 @@
 		4DEB307015BB57DF006DDE62 /* GetIt */ = {
 			isa = PBXGroup;
 			children = (
+				4DCD9C2C15BC629A00B05C8A /* MBProgressHUD.h */,
+				4DCD9C2D15BC629A00B05C8A /* MBProgressHUD.m */,
 				4DEB307915BB57DF006DDE62 /* AppDelegate.h */,
 				4DEB307A15BB57DF006DDE62 /* AppDelegate.m */,
 				4DEB307C15BB57DF006DDE62 /* MainStoryboard_iPhone.storyboard */,
@@ -642,6 +647,7 @@
 				4D9055A815BB6EDE00778589 /* StackMobSession.m in Sources */,
 				4D9055A915BB6EDE00778589 /* NSData+Base64.m in Sources */,
 				4D9055AA15BB6EDE00778589 /* NSData+JSON.m in Sources */,
+				4DCD9C2E15BC629A00B05C8A /* MBProgressHUD.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

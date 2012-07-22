@@ -11,6 +11,7 @@
 #import "FilterViewController.h"
 #import "AFNetworking.h"
 #import "JSONKit.h"
+#import "MBProgressHUD.h"
 
 @interface MainViewController ()
 
@@ -28,10 +29,19 @@ NSMutableArray *items;
 NSMutableArray *categories;
 NSMutableArray *filteredItems;
 
+UIImageView *splash;
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    
+    splash = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Default.png"]];
+    splash.frame = CGRectMake(0, 0, 320, 480);
+    
+    [self.view addSubview:splash];
+    [MBProgressHUD showHUDAddedTo:splash animated:YES];
+    
     
     if (nil == locationManager) {
         locationManager = [[CLLocationManager alloc] init];
@@ -211,7 +221,10 @@ NSMutableArray *filteredItems;
         
         [self.tableView reloadData];
 
-//        NSLog(@"DEALS %@",[[[[JSON objectForKey:@"items"] lastObject] objectForKey:@"merchant"] class]);
+        [MBProgressHUD hideAllHUDsForView:splash animated:YES];
+        [splash removeFromSuperview];
+        
+
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"ERROR : %@ \n",error.localizedDescription);
     }];
