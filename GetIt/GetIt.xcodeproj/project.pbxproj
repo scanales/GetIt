@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1155747C15BBA78900DA26B5 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 1155747B15BBA78900DA26B5 /* Default.png */; };
 		4D90550515BB6C3D00778589 /* AFHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D9054BA15BB6C3D00778589 /* AFHTTPClient.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		4D90550615BB6C3D00778589 /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D9054BC15BB6C3D00778589 /* AFHTTPRequestOperation.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		4D90550715BB6C3D00778589 /* AFImageRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D9054BE15BB6C3D00778589 /* AFImageRequestOperation.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -55,6 +54,7 @@
 		4D9055AA15BB6EDE00778589 /* NSData+JSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D90558915BB6EDE00778589 /* NSData+JSON.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		4D9055B015BB743C00778589 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D9055AF15BB743C00778589 /* CoreLocation.framework */; };
 		4D9055BC15BB8F1500778589 /* deal_default.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D9055BB15BB8F1500778589 /* deal_default.png */; };
+		4D9055E115BBBA7000778589 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D9055E015BBBA7000778589 /* Default.png */; };
 		4DEB306B15BB57DF006DDE62 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DEB306A15BB57DF006DDE62 /* UIKit.framework */; };
 		4DEB306D15BB57DF006DDE62 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DEB306C15BB57DF006DDE62 /* Foundation.framework */; };
 		4DEB306F15BB57DF006DDE62 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DEB306E15BB57DF006DDE62 /* CoreGraphics.framework */; };
@@ -69,7 +69,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		1155747B15BBA78900DA26B5 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Default.png; path = ../../Dropbox/iOSDev12/GetIt/Graphics/Default.png; sourceTree = "<group>"; };
 		4D9054B915BB6C3D00778589 /* AFHTTPClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPClient.h; sourceTree = "<group>"; };
 		4D9054BA15BB6C3D00778589 /* AFHTTPClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPClient.m; sourceTree = "<group>"; };
 		4D9054BB15BB6C3D00778589 /* AFHTTPRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperation.h; sourceTree = "<group>"; };
@@ -164,6 +163,7 @@
 		4D90558915BB6EDE00778589 /* NSData+JSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+JSON.m"; sourceTree = "<group>"; };
 		4D9055AF15BB743C00778589 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		4D9055BB15BB8F1500778589 /* deal_default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = deal_default.png; sourceTree = SOURCE_ROOT; };
+		4D9055E015BBBA7000778589 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		4DEB306615BB57DF006DDE62 /* GetIt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GetIt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4DEB306A15BB57DF006DDE62 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		4DEB306C15BB57DF006DDE62 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -416,7 +416,7 @@
 		4DEB305B15BB57DF006DDE62 = {
 			isa = PBXGroup;
 			children = (
-				1155747B15BBA78900DA26B5 /* Default.png */,
+				4D9055E015BBBA7000778589 /* Default.png */,
 				4D9054B615BB6C3D00778589 /* External */,
 				4DEB307015BB57DF006DDE62 /* GetIt */,
 				4DEB306915BB57DF006DDE62 /* Frameworks */,
@@ -529,7 +529,7 @@
 				4DEB307E15BB57DF006DDE62 /* MainStoryboard_iPhone.storyboard in Resources */,
 				4DEB308115BB57DF006DDE62 /* MainStoryboard_iPad.storyboard in Resources */,
 				4D9055BC15BB8F1500778589 /* deal_default.png in Resources */,
-				1155747C15BBA78900DA26B5 /* Default.png in Resources */,
+				4D9055E115BBBA7000778589 /* Default.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

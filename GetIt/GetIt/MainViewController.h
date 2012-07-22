@@ -12,4 +12,8 @@
 
 @interface MainViewController : UITableViewController <CLLocationManagerDelegate>
 
+
+
+-(void)filterCategoryWith:(NSString *)category;
+
 @end

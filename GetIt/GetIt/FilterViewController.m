@@ -7,12 +7,15 @@
 //
 
 #import "FilterViewController.h"
+#import "MainViewController.h"
 
 @interface FilterViewController ()
 
 @end
 
 @implementation FilterViewController
+
+@synthesize categories;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -52,7 +55,7 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    return 10;
+    return [categories count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -63,9 +66,10 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
     // Configure the cell...
-    cell.textLabel.text = [NSString stringWithFormat:@"Categorie %d",indexPath.row];
+    cell.textLabel.text = [categories objectAtIndex:indexPath.row];
     
-    return cell;}
+    return cell;
+}
 
 /*
 // Override to support conditional editing of the table view.
@@ -110,16 +114,11 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    MainViewController *mainViewController = [[self.navigationController viewControllers] objectAtIndex:self.navigationController.viewControllers.count -2];
     
-    UIStoryboard *storyboard = self.storyboard;
+    [mainViewController filterCategoryWith:[categories objectAtIndex:indexPath.row]];
     
-    // Navigation logic may go here. Create and push another view controller.
-    /*
-     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-     // ...
-     // Pass the selected object to the new view controller.
-     [self.navigationController pushViewController:detailViewController animated:YES];
-     */
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 @end

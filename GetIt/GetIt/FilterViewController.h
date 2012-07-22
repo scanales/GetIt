@@ -10,4 +10,6 @@
 
 @interface FilterViewController : UITableViewController
 
+@property (nonatomic, strong) NSArray *categories;
+
 @end
