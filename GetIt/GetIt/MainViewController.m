@@ -22,6 +22,7 @@ CLLocation *userLocation;
 
 
 NSMutableArray *items;
+NSMutableArray *categories;
 
 - (void)viewDidLoad
 {
@@ -108,18 +109,23 @@ NSMutableArray *items;
         float c = 2 * atan2f(sqrtf(a), sqrtf(1-a));
         
         float distance = RADIUS * c;
-
         
-        NSLog(@"DISTANCE:\n%f", distance);
         [d setObject: [NSNumber numberWithFloat: distance] forKey:@"distance"];
     }
     NSSortDescriptor *descriptor = [[NSSortDescriptor alloc] initWithKey:@"distance"  ascending:YES];
 
     [items sortUsingDescriptors:[NSArray arrayWithObjects:descriptor, nil]];
-    
-    NSLog(@"%@", items);
-    
-    
+}
+
+- (void) getCategories: (NSArray *)items{
+    categories = [[NSMutableArray alloc] init];
+    for (NSDictionary *d in items) {
+        id cat = [[d objectForKey:@"deal"] objectForKey:@"category"];
+        if(![categories containsObject:cat]){
+            [categories addObject:cat];
+        }
+    }
+    NSLog(@"Categories\n%@", categories);
 }
 #pragma mark - Table view delegate
 
@@ -164,6 +170,7 @@ NSMutableArray *items;
         items = [JSON objectForKey:@"items"];
 
         [self sortItems:items];
+        [self getCategories:items];
         
         [self.tableView reloadData];
 
