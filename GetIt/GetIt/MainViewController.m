@@ -66,35 +66,29 @@ NSMutableArray *items;
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    return 10;
+    return [items count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"Cell";
+    static NSString *CellIdentifier = @"DealCell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
-    }
     // Configure the cell...
-    cell.textLabel.text = [NSString stringWithFormat:@"Deal %d",indexPath.row];
+    NSDictionary *item = [items objectAtIndex:indexPath.row];
+    
+    NSDictionary *deal = [item objectForKey:@"deal"];
+    
+    UILabel *textLabel = (UILabel *)[cell viewWithTag:2];
+    UIImageView *imageView = (UIImageView *)[cell viewWithTag:1];
+    
+    textLabel.font = [UIFont fontWithName:@"Futura-Medium" size:14.];
+    textLabel.text = [NSString stringWithFormat:@"%@",[deal objectForKey:@"title"]];
+    
+    [imageView setImageWithURL:[NSURL URLWithString:[deal objectForKey:@"image_thumb_retina"]]];
+    
+    
     
     return cell;
-}
-
-#pragma mark - Table view delegate
-
-
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    
-    UIStoryboard *storyboard = self.storyboard;
-    
-    DealDetailViewController *detailViewController = [storyboard instantiateViewControllerWithIdentifier:@"dealDetail"];
-    
-    [self.navigationController pushViewController:detailViewController animated:YES];
-    
-    [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    
 }
 
 - (void)sortItems:(NSMutableArray *)items{
@@ -127,7 +121,22 @@ NSMutableArray *items;
     
     
 }
+#pragma mark - Table view delegate
 
+
+
+-(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([[segue identifier] isEqualToString: @"dealDetail"]) {
+        //pass values
+        NSLog(@"The sender is %@",sender);
+        
+        NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
+        
+        DealDetailViewController *dest = [segue destinationViewController];
+        dest.item = [items objectAtIndex:indexPath.row];
+       
+    }
+}
 
 #pragma mark - CLLocationManagerDelegate
 
@@ -153,7 +162,11 @@ NSMutableArray *items;
         JSONDecoder *decoder = [[JSONDecoder alloc] init];
         id JSON = [decoder mutableObjectWithData:responseObject];
         items = [JSON objectForKey:@"items"];
+
         [self sortItems:items];
+        
+        [self.tableView reloadData];
+
 //        NSLog(@"DEALS %@",[[[[JSON objectForKey:@"items"] lastObject] objectForKey:@"merchant"] class]);
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"ERROR : %@ \n",error.localizedDescription);
