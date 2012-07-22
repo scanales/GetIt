@@ -89,6 +89,7 @@ UIImageView *splash;
         }
     }
     [self.tableView reloadData];
+    [self.tableView selectRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] animated:YES scrollPosition:UITableViewScrollPositionTop];
     
 }
 
