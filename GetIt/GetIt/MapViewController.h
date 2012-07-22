@@ -17,4 +17,7 @@
 
 @property (nonatomic,strong) NSDictionary *item;
 
+- (IBAction)openInMaps:(id)sender;
+
+
 @end

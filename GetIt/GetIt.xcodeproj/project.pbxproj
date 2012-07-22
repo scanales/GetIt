@@ -69,6 +69,10 @@
 		4DE98DDE15BC7662008ED442 /* 07-map-marker@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4DE98DDC15BC7662008ED442 /* 07-map-marker@2x.png */; };
 		4DE98DE115BC777A008ED442 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DE98DE015BC777A008ED442 /* MapViewController.m */; };
 		4DE98DE815BC7860008ED442 /* DealPlaceMark.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DE98DE715BC7860008ED442 /* DealPlaceMark.m */; };
+		4DE98DED15BC8C0A008ED442 /* ojbutton-highlight.png in Resources */ = {isa = PBXBuildFile; fileRef = 4DE98DE915BC8C0A008ED442 /* ojbutton-highlight.png */; };
+		4DE98DEE15BC8C0A008ED442 /* ojbutton.png in Resources */ = {isa = PBXBuildFile; fileRef = 4DE98DEA15BC8C0A008ED442 /* ojbutton.png */; };
+		4DE98DEF15BC8C0A008ED442 /* redbutton-highlight.png in Resources */ = {isa = PBXBuildFile; fileRef = 4DE98DEB15BC8C0A008ED442 /* redbutton-highlight.png */; };
+		4DE98DF015BC8C0A008ED442 /* redbutton.png in Resources */ = {isa = PBXBuildFile; fileRef = 4DE98DEC15BC8C0A008ED442 /* redbutton.png */; };
 		4DEB306B15BB57DF006DDE62 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DEB306A15BB57DF006DDE62 /* UIKit.framework */; };
 		4DEB306D15BB57DF006DDE62 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DEB306C15BB57DF006DDE62 /* Foundation.framework */; };
 		4DEB306F15BB57DF006DDE62 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DEB306E15BB57DF006DDE62 /* CoreGraphics.framework */; };
@@ -201,6 +205,10 @@
 		4DE98DE015BC777A008ED442 /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
 		4DE98DE615BC7860008ED442 /* DealPlaceMark.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DealPlaceMark.h; sourceTree = "<group>"; };
 		4DE98DE715BC7860008ED442 /* DealPlaceMark.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DealPlaceMark.m; sourceTree = "<group>"; };
+		4DE98DE915BC8C0A008ED442 /* ojbutton-highlight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ojbutton-highlight.png"; sourceTree = "<group>"; };
+		4DE98DEA15BC8C0A008ED442 /* ojbutton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ojbutton.png; sourceTree = "<group>"; };
+		4DE98DEB15BC8C0A008ED442 /* redbutton-highlight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "redbutton-highlight.png"; sourceTree = "<group>"; };
+		4DE98DEC15BC8C0A008ED442 /* redbutton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = redbutton.png; sourceTree = "<group>"; };
 		4DEB306615BB57DF006DDE62 /* GetIt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GetIt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4DEB306A15BB57DF006DDE62 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		4DEB306C15BB57DF006DDE62 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -474,14 +482,26 @@
 			path = CardIO;
 			sourceTree = "<group>";
 		};
-		4DEB305B15BB57DF006DDE62 = {
+		4DE98DF115BC8C13008ED442 /* UI Resources */ = {
 			isa = PBXGroup;
 			children = (
+				4DE98DE915BC8C0A008ED442 /* ojbutton-highlight.png */,
+				4DE98DEA15BC8C0A008ED442 /* ojbutton.png */,
+				4DE98DEB15BC8C0A008ED442 /* redbutton-highlight.png */,
+				4DE98DEC15BC8C0A008ED442 /* redbutton.png */,
 				4DE98DDB15BC7662008ED442 /* 07-map-marker.png */,
 				4DE98DDC15BC7662008ED442 /* 07-map-marker@2x.png */,
 				6164D5DE15BBCBB400970109 /* ICON2.png */,
 				6164D5DC15BBC98E00970109 /* icon.png */,
 				4D9055E015BBBA7000778589 /* Default.png */,
+			);
+			name = "UI Resources";
+			sourceTree = "<group>";
+		};
+		4DEB305B15BB57DF006DDE62 = {
+			isa = PBXGroup;
+			children = (
+				4DE98DF115BC8C13008ED442 /* UI Resources */,
 				4D9054B615BB6C3D00778589 /* External */,
 				4DEB307015BB57DF006DDE62 /* GetIt */,
 				4DEB306915BB57DF006DDE62 /* Frameworks */,
@@ -613,6 +633,10 @@
 				6164D5DF15BBCBB400970109 /* ICON2.png in Resources */,
 				4DE98DDD15BC7662008ED442 /* 07-map-marker.png in Resources */,
 				4DE98DDE15BC7662008ED442 /* 07-map-marker@2x.png in Resources */,
+				4DE98DED15BC8C0A008ED442 /* ojbutton-highlight.png in Resources */,
+				4DE98DEE15BC8C0A008ED442 /* ojbutton.png in Resources */,
+				4DE98DEF15BC8C0A008ED442 /* redbutton-highlight.png in Resources */,
+				4DE98DF015BC8C0A008ED442 /* redbutton.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -759,6 +783,7 @@
 		4DEB308815BB57DF006DDE62 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Mariana Ruelas (56S9GCMDA5)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/External/StackMob/External/libraries\"",
@@ -773,6 +798,7 @@
 				);
 				OTHER_LDFLAGS = "-lstdc++";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "C2B9EAB6-745C-4A43-9273-E42E337392DA";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -780,6 +806,7 @@
 		4DEB308915BB57DF006DDE62 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Mariana Ruelas (56S9GCMDA5)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/External/StackMob/External/libraries\"",
@@ -794,6 +821,7 @@
 				);
 				OTHER_LDFLAGS = "-lstdc++";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "C2B9EAB6-745C-4A43-9273-E42E337392DA";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

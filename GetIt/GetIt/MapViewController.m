@@ -40,8 +40,8 @@
     MKCoordinateRegion region;
     region.center = placeMark.coordinate;
 	MKCoordinateSpan span;
-	span.latitudeDelta = .005;
-	span.longitudeDelta = .005;
+	span.latitudeDelta = .010;
+	span.longitudeDelta = .010;
 	region.span = span;
 	
 	[mapView setRegion:region animated:YES];
@@ -59,5 +59,12 @@
 {
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
+
+- (IBAction)openInMaps:(id)sender {
+    NSString *urlString = [NSString stringWithFormat:@"http://maps.google.com/maps?ll=%@,%@&z=16",[[item objectForKey:@"merchant"] objectForKey:@"latitude"],[[item objectForKey:@"merchant"] objectForKey:@"longitude"]];
+
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[urlString stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]]];
+}
+
 
 @end
