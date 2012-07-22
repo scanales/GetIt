@@ -34,9 +34,13 @@
     
     NSDictionary *deal = [item objectForKey:@"deal"];
     [illustration setImageWithURL:[NSURL URLWithString:[deal objectForKey:@"image"]]];
+    [self setTitle:[deal objectForKey:@"title"]];
     
     titleLbl.text = [deal objectForKey:@"title"];
     discount.text = [deal objectForKey:@"discount"];
+    [addresslbl setText:[[item objectForKey:@"merchant"] objectForKey:@"address"]];
+    [self.view addSubview:address];
+    
     
 }
 
