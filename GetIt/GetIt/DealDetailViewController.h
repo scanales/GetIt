@@ -8,7 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface DealDetailViewController : UIViewController {
+#import "CardIO.h"
+
+
+@interface DealDetailViewController : UIViewController <CardIOPaymentViewControllerDelegate> {
     
     __weak IBOutlet UILabel *addressLbl;
     __weak IBOutlet UILabel *descriptionLbl;
@@ -18,5 +21,5 @@
 }
 
 @property (nonatomic,strong) NSDictionary *item;
-
+- (IBAction)scanCard:(id)sender;
 @end

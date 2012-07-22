@@ -55,6 +55,14 @@
 		4D9055B015BB743C00778589 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D9055AF15BB743C00778589 /* CoreLocation.framework */; };
 		4D9055BC15BB8F1500778589 /* deal_default.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D9055BB15BB8F1500778589 /* deal_default.png */; };
 		4D9055E115BBBA7000778589 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D9055E015BBBA7000778589 /* Default.png */; };
+		4D9055E915BBC13D00778589 /* libCardIO.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D9055E815BBC13D00778589 /* libCardIO.a */; };
+		4D9055EB15BBC17700778589 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D9055EA15BBC17700778589 /* AVFoundation.framework */; };
+		4D9055ED15BBC17F00778589 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D9055EC15BBC17F00778589 /* AudioToolbox.framework */; };
+		4D9055EF15BBC18600778589 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D9055EE15BBC18600778589 /* CoreMedia.framework */; };
+		4D9055F115BBC18D00778589 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D9055F015BBC18D00778589 /* CoreVideo.framework */; };
+		4D9055F315BBC19500778589 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D9055F215BBC19500778589 /* MobileCoreServices.framework */; };
+		4D9055F515BBC19C00778589 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D9055F415BBC19C00778589 /* QuartzCore.framework */; };
+		4D9055F715BBC1A400778589 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D9055F615BBC1A400778589 /* Security.framework */; };
 		4DEB306B15BB57DF006DDE62 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DEB306A15BB57DF006DDE62 /* UIKit.framework */; };
 		4DEB306D15BB57DF006DDE62 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DEB306C15BB57DF006DDE62 /* Foundation.framework */; };
 		4DEB306F15BB57DF006DDE62 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DEB306E15BB57DF006DDE62 /* CoreGraphics.framework */; };
@@ -164,6 +172,18 @@
 		4D9055AF15BB743C00778589 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		4D9055BB15BB8F1500778589 /* deal_default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = deal_default.png; sourceTree = SOURCE_ROOT; };
 		4D9055E015BBBA7000778589 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		4D9055E415BBC13D00778589 /* CardIO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardIO.h; sourceTree = "<group>"; };
+		4D9055E515BBC13D00778589 /* CardIOCreditCardInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardIOCreditCardInfo.h; sourceTree = "<group>"; };
+		4D9055E615BBC13D00778589 /* CardIOPaymentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardIOPaymentViewController.h; sourceTree = "<group>"; };
+		4D9055E715BBC13D00778589 /* CardIOPaymentViewControllerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardIOPaymentViewControllerDelegate.h; sourceTree = "<group>"; };
+		4D9055E815BBC13D00778589 /* libCardIO.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libCardIO.a; sourceTree = "<group>"; };
+		4D9055EA15BBC17700778589 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		4D9055EC15BBC17F00778589 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		4D9055EE15BBC18600778589 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		4D9055F015BBC18D00778589 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
+		4D9055F215BBC19500778589 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		4D9055F415BBC19C00778589 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		4D9055F615BBC1A400778589 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		4DEB306615BB57DF006DDE62 /* GetIt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GetIt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4DEB306A15BB57DF006DDE62 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		4DEB306C15BB57DF006DDE62 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -189,14 +209,22 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4D90553615BB6D4400778589 /* SystemConfiguration.framework in Frameworks */,
+				4D9055F715BBC1A400778589 /* Security.framework in Frameworks */,
+				4D9055F515BBC19C00778589 /* QuartzCore.framework in Frameworks */,
+				4D9055F315BBC19500778589 /* MobileCoreServices.framework in Frameworks */,
+				4D9055F115BBC18D00778589 /* CoreVideo.framework in Frameworks */,
+				4D9055EF15BBC18600778589 /* CoreMedia.framework in Frameworks */,
+				4D9055ED15BBC17F00778589 /* AudioToolbox.framework in Frameworks */,
+				4D9055EB15BBC17700778589 /* AVFoundation.framework in Frameworks */,
 				4D9055B015BB743C00778589 /* CoreLocation.framework in Frameworks */,
 				4D90553815BB6D4900778589 /* CFNetwork.framework in Frameworks */,
-				4D90553615BB6D4400778589 /* SystemConfiguration.framework in Frameworks */,
 				4DEB306B15BB57DF006DDE62 /* UIKit.framework in Frameworks */,
 				4DEB306D15BB57DF006DDE62 /* Foundation.framework in Frameworks */,
 				4DEB306F15BB57DF006DDE62 /* CoreGraphics.framework in Frameworks */,
 				4D90558A15BB6EDE00778589 /* InneractiveAdSDK-v112-S.a in Frameworks */,
 				4D90558C15BB6EDE00778589 /* YAJLIOS.framework in Frameworks */,
+				4D9055E915BBC13D00778589 /* libCardIO.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -206,6 +234,7 @@
 		4D9054B615BB6C3D00778589 /* External */ = {
 			isa = PBXGroup;
 			children = (
+				4D9055E315BBC13D00778589 /* CardIO */,
 				4D9055BB15BB8F1500778589 /* deal_default.png */,
 				4D90553915BB6EDE00778589 /* StackMob */,
 				4D9054B715BB6C3D00778589 /* AFNetworking */,
@@ -413,6 +442,18 @@
 			path = Utils;
 			sourceTree = "<group>";
 		};
+		4D9055E315BBC13D00778589 /* CardIO */ = {
+			isa = PBXGroup;
+			children = (
+				4D9055E415BBC13D00778589 /* CardIO.h */,
+				4D9055E515BBC13D00778589 /* CardIOCreditCardInfo.h */,
+				4D9055E615BBC13D00778589 /* CardIOPaymentViewController.h */,
+				4D9055E715BBC13D00778589 /* CardIOPaymentViewControllerDelegate.h */,
+				4D9055E815BBC13D00778589 /* libCardIO.a */,
+			);
+			path = CardIO;
+			sourceTree = "<group>";
+		};
 		4DEB305B15BB57DF006DDE62 = {
 			isa = PBXGroup;
 			children = (
@@ -435,6 +476,13 @@
 		4DEB306915BB57DF006DDE62 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4D9055F615BBC1A400778589 /* Security.framework */,
+				4D9055F415BBC19C00778589 /* QuartzCore.framework */,
+				4D9055F215BBC19500778589 /* MobileCoreServices.framework */,
+				4D9055F015BBC18D00778589 /* CoreVideo.framework */,
+				4D9055EE15BBC18600778589 /* CoreMedia.framework */,
+				4D9055EC15BBC17F00778589 /* AudioToolbox.framework */,
+				4D9055EA15BBC17700778589 /* AVFoundation.framework */,
 				4D9055AF15BB743C00778589 /* CoreLocation.framework */,
 				4D90553515BB6D4400778589 /* SystemConfiguration.framework */,
 				4D90553715BB6D4900778589 /* CFNetwork.framework */,
@@ -683,7 +731,9 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/External/StackMob/External/inneractive/lib\"",
+					"\"$(SRCROOT)/External/CardIO\"",
 				);
+				OTHER_LDFLAGS = "-lstdc++";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -702,7 +752,9 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/External/StackMob/External/inneractive/lib\"",
+					"\"$(SRCROOT)/External/CardIO\"",
 				);
+				OTHER_LDFLAGS = "-lstdc++";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
