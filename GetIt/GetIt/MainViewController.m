@@ -8,6 +8,7 @@
 
 #import "MainViewController.h"
 #import "DealDetailViewController.h"
+#import "FilterViewController.h"
 #import "AFNetworking.h"
 #import "JSONKit.h"
 
@@ -17,12 +18,15 @@
 
 @implementation MainViewController
 
+
+
 CLLocationManager *locationManager;
 CLLocation *userLocation;
 
 
 NSMutableArray *items;
 NSMutableArray *categories;
+NSMutableArray *filteredItems;
 
 - (void)viewDidLoad
 {
@@ -55,6 +59,20 @@ NSMutableArray *categories;
     }
 }
 
+#pragma mark - filter
+
+-(void)filterCategoryWith:(NSString *)category {
+
+    filteredItems = [[NSMutableArray alloc] init];
+    for (NSDictionary *item in items) {
+        if ([[[item objectForKey:@"deal"] objectForKey:@"category"] isEqualToString:category]) {
+            [filteredItems addObject:item];
+        }
+    }
+    
+    [self.tableView reloadData];
+    
+}
 
 #pragma mark - Table view data source
 
@@ -67,7 +85,13 @@ NSMutableArray *categories;
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    return [items count];
+    
+    if (filteredItems) {
+        return [filteredItems count];
+    } else {
+        return [items count];
+    }
+    
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -75,7 +99,15 @@ NSMutableArray *categories;
     static NSString *CellIdentifier = @"DealCell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     // Configure the cell...
-    NSDictionary *item = [items objectAtIndex:indexPath.row];
+    
+    NSDictionary *item;
+    if (filteredItems) {
+         item = [filteredItems objectAtIndex:indexPath.row];
+    } else {
+        item = [items objectAtIndex:indexPath.row];
+    }
+    
+
     
     NSDictionary *deal = [item objectForKey:@"deal"];
     
@@ -139,22 +171,21 @@ NSMutableArray *categories;
 
 -(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([[segue identifier] isEqualToString: @"dealDetail"]) {
-        //pass values
-        NSLog(@"The sender is %@",sender);
         
         NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
         
         DealDetailViewController *dest = [segue destinationViewController];
         dest.item = [items objectAtIndex:indexPath.row];
        
+    } else if ([[segue identifier] isEqualToString:@"dealFilter"]) {
+        FilterViewController *dest = [segue destinationViewController];
+        dest.categories = categories;
     }
 }
 
 #pragma mark - CLLocationManagerDelegate
 
 - (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation {
-    
-
     
     NSLog(@" lat :%f  long: %f",newLocation.coordinate.latitude,newLocation.coordinate.longitude);
     userLocation = newLocation;
