@@ -81,13 +81,16 @@ NSMutableArray *categories;
     
     UILabel *textLabel = (UILabel *)[cell viewWithTag:2];
     UIImageView *imageView = (UIImageView *)[cell viewWithTag:1];
+    UILabel *distanceLbl = (UILabel *)[cell viewWithTag:3];
+    
     
     textLabel.font = [UIFont fontWithName:@"Futura-Medium" size:14.];
     textLabel.text = [NSString stringWithFormat:@"%@",[deal objectForKey:@"title"]];
     
+    NSNumberFormatter *numberFormatter = [[NSNumberFormatter alloc] init];
+    [numberFormatter setMaximumFractionDigits:2];
+    distanceLbl.text = [numberFormatter stringFromNumber:[item objectForKey:@"distance"] ];
     [imageView setImageWithURL:[NSURL URLWithString:[deal objectForKey:@"image_thumb_retina"]]];
-    
-    
     
     return cell;
 }

@@ -10,6 +10,8 @@
 
 @interface DealDetailViewController : UIViewController {
     
+    __weak IBOutlet UILabel *addressLbl;
+    __weak IBOutlet UILabel *descriptionLbl;
     __weak IBOutlet UIImageView *illustration;
     __weak IBOutlet UILabel *discount;
     __weak IBOutlet UILabel *titleLbl;

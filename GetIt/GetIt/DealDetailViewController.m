@@ -38,9 +38,11 @@
     
     titleLbl.text = [deal objectForKey:@"title"];
     discount.text = [deal objectForKey:@"discount"];
-    [addresslbl setText:[[item objectForKey:@"merchant"] objectForKey:@"address"]];
-    [self.view addSubview:address];
+    addressLbl.text= [[item objectForKey:@"merchant"] objectForKey:@"address"];
     
+
+    descriptionLbl.text = [deal objectForKey:@"description"];
+
     
 }
 
@@ -49,6 +51,8 @@
     discount = nil;
     illustration = nil;
     titleLbl = nil;
+    descriptionLbl = nil;
+    addressLbl = nil;
     [super viewDidUnload];
     // Release any retained subviews of the main view.
 }
