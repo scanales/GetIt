@@ -8,6 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
-@interface DealDetailViewController : UIViewController
+@interface DealDetailViewController : UIViewController {
+    
+    __weak IBOutlet UIImageView *illustration;
+    __weak IBOutlet UILabel *discount;
+    __weak IBOutlet UILabel *titleLbl;
+}
+
+@property (nonatomic,strong) NSDictionary *item;
 
 @end
