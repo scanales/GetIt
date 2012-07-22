@@ -62,12 +62,24 @@
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
+#pragma mark - Actions
+
 - (IBAction)scanCard:(id)sender {
     CardIOPaymentViewController *scanViewController = [[CardIOPaymentViewController alloc] initWithPaymentDelegate:self];
     scanViewController.appToken = @"9b39146fbf8a4ff4aa9b65cb72dbd1f7"; // get your app token from the card.io website
     [self presentModalViewController:scanViewController animated:YES];
 }
 
+- (IBAction)holdItAction:(id)sender {
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"" message:@"We will hold it for 30 minutes under this name." delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Ok",nil ];
+    
+    [alert setAlertViewStyle:UIAlertViewStylePlainTextInput];
+    
+    [alert show];
+}
+
+
+#pragma mark - CardIOPaymentViewControllerDelegate
 
 - (void)userDidCancelPaymentViewController:(CardIOPaymentViewController *)scanViewController {
     NSLog(@"User canceled payment info");
@@ -80,6 +92,12 @@
     NSLog(@"Received card info. Number: %@, expiry: %02i/%i, cvv: %@.", info.redactedCardNumber, info.expiryMonth, info.expiryYear, info.cvv);
     // Use the card info...
     [scanViewController dismissModalViewControllerAnimated:YES];
+}
+
+#pragma mark - UIAlertViewDelegate
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+    
 }
 
 
