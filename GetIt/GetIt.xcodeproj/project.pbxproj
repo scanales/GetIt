@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		1155747C15BBA78900DA26B5 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 1155747B15BBA78900DA26B5 /* Default.png */; };
-		11CD5B3B15BB71C500561DB7 /* GetIt12.m in Sources */ = {isa = PBXBuildFile; fileRef = 11CD5B3A15BB71C500561DB7 /* GetIt12.m */; };
 		4D90550515BB6C3D00778589 /* AFHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D9054BA15BB6C3D00778589 /* AFHTTPClient.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		4D90550615BB6C3D00778589 /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D9054BC15BB6C3D00778589 /* AFHTTPRequestOperation.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		4D90550715BB6C3D00778589 /* AFImageRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D9054BE15BB6C3D00778589 /* AFImageRequestOperation.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -71,8 +70,6 @@
 
 /* Begin PBXFileReference section */
 		1155747B15BBA78900DA26B5 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Default.png; path = ../../Dropbox/iOSDev12/GetIt/Graphics/Default.png; sourceTree = "<group>"; };
-		11CD5B3915BB71C500561DB7 /* GetIt12.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GetIt12.h; path = ../getit2012/GetIt12.h; sourceTree = "<group>"; };
-		11CD5B3A15BB71C500561DB7 /* GetIt12.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GetIt12.m; path = ../getit2012/GetIt12.m; sourceTree = "<group>"; };
 		4D9054B915BB6C3D00778589 /* AFHTTPClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPClient.h; sourceTree = "<group>"; };
 		4D9054BA15BB6C3D00778589 /* AFHTTPClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPClient.m; sourceTree = "<group>"; };
 		4D9054BB15BB6C3D00778589 /* AFHTTPRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperation.h; sourceTree = "<group>"; };
@@ -420,8 +417,6 @@
 			isa = PBXGroup;
 			children = (
 				1155747B15BBA78900DA26B5 /* Default.png */,
-				11CD5B3915BB71C500561DB7 /* GetIt12.h */,
-				11CD5B3A15BB71C500561DB7 /* GetIt12.m */,
 				4D9054B615BB6C3D00778589 /* External */,
 				4DEB307015BB57DF006DDE62 /* GetIt */,
 				4DEB306915BB57DF006DDE62 /* Frameworks */,
@@ -591,7 +586,6 @@
 				4D9055A815BB6EDE00778589 /* StackMobSession.m in Sources */,
 				4D9055A915BB6EDE00778589 /* NSData+Base64.m in Sources */,
 				4D9055AA15BB6EDE00778589 /* NSData+JSON.m in Sources */,
-				11CD5B3B15BB71C500561DB7 /* GetIt12.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
