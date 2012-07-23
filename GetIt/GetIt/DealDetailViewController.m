@@ -105,7 +105,8 @@
 #pragma mark - UIAlertViewDelegate
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
-    
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"" message:@"We'll reserve your deal for 30 minutes. See you soon." delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles: nil];
+    [alert show];
 }
 
 

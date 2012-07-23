@@ -40,8 +40,8 @@
     MKCoordinateRegion region;
     region.center = placeMark.coordinate;
 	MKCoordinateSpan span;
-	span.latitudeDelta = .010;
-	span.longitudeDelta = .010;
+	span.latitudeDelta = .030;
+	span.longitudeDelta = .030;
 	region.span = span;
 	
 	[mapView setRegion:region animated:YES];
